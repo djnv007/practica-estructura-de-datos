@@ -9,6 +9,7 @@ NodoCola::NodoCola(Pedido p, NodoCola* sig){
 Cola::Cola(){
     primero = NULL;
     ultimo= NULL;
+    longitud=0;
 }
 Cola::~Cola(){}
 bool Cola::esVacia(){return ((primero==NULL)&&(ultimo==NULL));}
@@ -24,9 +25,9 @@ void Cola::encolar(Pedido p){
     }
     longitud++;
 }
-bool Cola::desencolar(){
+bool Cola::desencolar(Pedido &p){
     if(!esVacia()){
-        Pedido p = primero->datos;
+        p = primero->datos;
         NodoCola* aux= primero;
         if((primero==ultimo)&&(primero->siguiente==NULL)){
             primero= NULL;

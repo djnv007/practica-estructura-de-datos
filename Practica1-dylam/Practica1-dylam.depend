@@ -29,3 +29,26 @@
 	"pizzeria.h"
 	<cstring>
 
+1791831664 source:d:\estructuras-de-datos\practica-estructura-de-datos\practica1-dylam\src\pedido.cpp
+	"Pedido.h"
+
+1792428212 d:\estructuras-de-datos\practica-estructura-de-datos\practica1-dylam\include\pedido.h
+	<iostream>
+	<cstring>
+
+1792427306 source:d:\estructuras-de-datos\practica-estructura-de-datos\practica1-dylam\src\pizzeria.cpp
+	"pizzeria.h"
+	<cstring>
+
+1792427306 d:\estructuras-de-datos\practica-estructura-de-datos\practica1-dylam\include\pizzeria.h
+	"Pedido.h"
+	<iostream>
+	<cstring>
+
+1792428796 source:d:\estructuras-de-datos\practica-estructura-de-datos\practica1-dylam\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<cctype>
+	"pizzeria.h"
+

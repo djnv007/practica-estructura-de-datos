@@ -27,7 +27,7 @@ public:
     ~Cola();
     bool esVacia();
     void encolar(Pedido p);
-    bool desencolar();
+    bool desencolar(Pedido &p);
     void mostrar();
 };
 Pedido generar_pedido();

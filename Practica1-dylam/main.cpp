@@ -7,25 +7,68 @@
 
 using namespace std;
 
-void avanzar_N_pedidos_aux(int n,Cola &Primero,Cola &Siguiente){
-    if(n>Primero.longitud){n=Primero.longitud;}
-    for(int i=0;i<n;++i){
-        Pedido p =Primero.primero->datos;
-        Primero.desencolar()
-        Siguiente.encolar(p);
-    }
-}
-void avanzar_N_pedidos(int n, Cola& Recibidos,Cola&PreparacionEspecial, Cola& Cocina, Cola&ExpedicionNorte, Cola&ExpedicionSur, Cola&ExpedicionEste, Cola&ExpedicionOeste){
-        Cola aux;
-        avanzar_N_pedidos_aux(n,ExpedicionEste,aux);
-        avanzar_N_pedidos_aux(n,ExpedicionOeste,aux);
-        avanzar_N_pedidos_aux(n,ExpedicionNorte,aux);
-        avanzar_N_pedidos_aux(n,ExpedicionSur,aux);
-        delete aux;
-        Recibidos.primero->datos;
+Cola Recibidos;
+Cola Cocina;
+Cola ExpedicionNorte;
+Cola ExpedicionSur;
+Cola ExpedicionEste;
+Cola ExpedicionOeste;
+Cola PreparacionEspecial;
 
-        avanzar_N_pedidos_aux(n,Cocina,ExpedicionNorte);
-        avanzar_N_pedidos_aux(n,PreparacionEspecial,Cocina);
+
+void avanzar_N_pedidos(int n){
+        Pedido p;
+        int contador=0;
+        while(!ExpedicionNorte.esVacia()&&contador<n){
+                ExpedicionNorte.desencolar(p);
+                contador++;
+        }
+        contador=0;
+        while(!ExpedicionSur.esVacia()&&contador<n){
+            ExpedicionSur.desencolar(p);
+            contador++;
+        }
+        contador=0;
+        while(!ExpedicionEste.esVacia()&&contador<n){
+            ExpedicionEste.desencolar(p);
+            contador++;
+        }
+        contador=0;
+        while(!ExpedicionOeste.esVacia()&&contador<n){
+            ExpedicionOeste.desencolar(p);
+            contador++;
+        }
+        contador=0;
+        while(!Cocina.esVacia()&&contador<n){
+            Cocina.desencolar(p);
+            p.estado= Expedicion;
+            if(p.zona_reparto==Norte){ExpedicionNorte.encolar(p);}
+            else if(p.zona_reparto==Sur){ExpedicionSur.encolar(p);}
+            else if(p.zona_reparto==Este){ExpedicionEste.encolar(p);}
+            else if(p.zona_reparto==Oeste){ExpedicionOeste.encolar(p);}
+            contador++;
+        }
+        contador=0;
+        while(!PreparacionEspecial.esVacia()&&contador<n){
+            PreparacionEspecial.desencolar(p);
+            p.estado=cocina;
+            Cocina.encolar(p);
+            contador++;
+        }
+        contador=0;
+        while(!Recibidos.esVacia()&&contador<n){
+            Recibidos.desencolar(p);
+            if(p.personalizada){
+                p.estado=Preparacion_especial;
+                PreparacionEspecial.encolar(p);
+            }
+            else{
+                p.estado=cocina;
+                Cocina.encolar(p);
+            }
+            contador++;
+        }
+
 
 
 }
@@ -34,13 +77,6 @@ void avanzar_N_pedidos(int n, Cola& Recibidos,Cola&PreparacionEspecial, Cola& Co
 int main()
 {
     srand(time(NULL));
-    Cola Recibidos;
-    Cola Cocina;
-    Cola ExpedicionNorte;
-    Cola ExpedicionSur;
-    Cola ExpedicionEste;
-    Cola ExpedicionOeste;
-    Cola Preparacion especial;
     int opcion;
     bool abierto=true;
     while(abierto){
@@ -65,6 +101,12 @@ int main()
                 }
                 case 2:{
                     Recibidos.mostrar();
+                    Cocina.mostrar();
+                    ExpedicionNorte.mostrar();
+                    ExpedicionSur.mostrar();
+                    ExpedicionEste.mostrar();
+                    ExpedicionOeste.mostrar();
+                    PreparacionEspecial.mostrar();
                     break;
                 }
 
@@ -74,8 +116,9 @@ int main()
                     cin>>num;
                     cin.ignore(1000,'\n');
                     if(num>N_PEDIDOS_PASO){num=10;}
+                    avanzar_N_pedidos(num);
                     cout<<"Has avanzado "<<num<<" pedidos un paso"<<endl;
-
+                    break;
 
                 }
                 case 0:{
