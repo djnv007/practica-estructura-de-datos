@@ -25,45 +25,7 @@
 	<iostream>
 	<cstring>
 
-1791873004 source:d:\estructuras-de-datos\ej-poo\practica1-dylam\src\pizzeria.cpp
+1791873990 source:d:\estructuras-de-datos\ej-poo\practica1-dylam\src\pizzeria.cpp
 	"pizzeria.h"
-	<cstring>
-
-1791873508 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica_lab\practica1-dylam\main.cpp
-	<iostream>
-	<ctime>
-	<cstdlib>
-	<cctype>
-	"pizzeria.h"
-
-1791875415 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica_lab\practica1-dylam\include\pizzeria.h
-	"Pedido.h"
-	<iostream>
-	<cstring>
-
-1791831664 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica_lab\practica1-dylam\include\pedido.h
-	<iostream>
-	<cstring>
-
-1791831664 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica_lab\practica1-dylam\src\pedido.cpp
-	"Pedido.h"
-
-1791831664 source:d:\estructuras-de-datos\practica1-dylam\src\pedido.cpp
-	"Pedido.h"
-
-1791876860 d:\estructuras-de-datos\practica1-dylam\include\pedido.h
-	<iostream>
-	<cstring>
-
-1791876796 source:d:\estructuras-de-datos\practica1-dylam\main.cpp
-	<iostream>
-	<ctime>
-	<cstdlib>
-	<cctype>
-	"pizzeria.h"
-
-1792336186 d:\estructuras-de-datos\practica1-dylam\include\pizzeria.h
-	"Pedido.h"
-	<iostream>
 	<cstring>
 
