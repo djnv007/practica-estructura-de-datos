@@ -19,4 +19,8 @@ struct Pedido{
     bool personalizada;
     Estado estado;
 };
+char* tipoToString(Tipo_pizza t);
+char* tamanoToString(Tamano tam);
+char* zonaToString(Zona_reparto zona);
+char* estadoToString(Estado estado);
 #endif // PEDIDO_H

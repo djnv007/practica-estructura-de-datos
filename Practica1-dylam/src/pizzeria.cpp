@@ -56,11 +56,11 @@ void Cola::mostrar(){
         cout<<"\n ---------------------------------------\n";
         cout<<"Pedido: "<<p.id_pedido<<endl;
         cout<<"Cliente: "<<p.id_cliente<<endl;
-        cout<<"Pizza: "<<p.tipo_pizza<<endl;
-        cout<<"Tamanio: "<<p.tamano<<endl;
-        cout<<"Zona: "<<p.zona_reparto<<endl;
+        cout<<"Pizza: "<<tipoToString(p.tipo_pizza)<<endl;
+        cout<<"Tamanio: "<<tamanoToString(p.tamano)<<endl;
+        cout<<"Zona: "<<zonaToString(p.zona_reparto)<<endl;
         cout<<"Personalizado: "<<p.personalizada<<endl;
-        cout<<"Estado: "<<p.estado<<endl;
+        cout<<"Estado: "<<estadoToString(p.estado)<<endl;
         cout << "\n ------------------------------------\n";
         aux=aux->siguiente;
     }
