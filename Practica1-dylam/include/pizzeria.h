@@ -4,7 +4,7 @@
 #include "Pedido.h"
 #include<iostream>
 #include<cstring>
-#define PROB_PERSOONALIZACION 20
+#define PROB_PERSONALIZACION 20
 using namespace std;
 
 class NodoCola
@@ -28,7 +28,7 @@ public:
     bool esVacia();
     void encolar(Pedido p);
     bool desencolar(Pedido &p);
-    void mostrar();
+    void mostrar(const char* nombre);
 };
 Pedido generar_pedido();
 

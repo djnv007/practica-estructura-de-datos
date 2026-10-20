@@ -12,7 +12,15 @@ Cola::Cola(){
     ultimo= NULL;
     longitud=0;
 }
-Cola::~Cola(){}
+Cola::~Cola()
+{
+    Pedido p;
+
+    while(desencolar(p))
+    {
+
+    }
+}
 bool Cola::esVacia(){return ((primero==NULL)&&(ultimo==NULL));}
 void Cola::encolar(Pedido p){
     NodoCola* nuevo= new NodoCola(p);
@@ -46,8 +54,9 @@ bool Cola::desencolar(Pedido &p){
     }
     return false;
 }
-void Cola::mostrar()
+void Cola::mostrar(const char* nombre)
 {
+    cout << "\n=========== " << nombre << " ===========\n";
     if(esVacia())
     {
         cout << "Cola vacia\n";
@@ -98,7 +107,7 @@ contador++;
     p.tipo_pizza = static_cast<Tipo_pizza>(rand()%6);
     p.tamano = static_cast <Tamano> (rand()%2);
     p.zona_reparto = static_cast<Zona_reparto> (rand()%4);
-    p.personalizada= (rand()%100) < PROB_PERSOONALIZACION;
+    p.personalizada= (rand()%100) < PROB_PERSONALIZACION;
     p.estado = Recibido;
     return p;
 

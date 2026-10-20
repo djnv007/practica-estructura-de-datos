@@ -52,26 +52,26 @@
 	<cctype>
 	"pizzeria.h"
 
-1792434990 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\main.cpp
+1792480149 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>
 	<cctype>
 	"pizzeria.h"
 
-1792434990 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\include\pizzeria.h
+1792480688 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\include\pizzeria.h
 	"Pedido.h"
 	<iostream>
 	<cstring>
 
-1792434990 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\include\pedido.h
+1792480154 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\include\pedido.h
 	<iostream>
 	<cstring>
 
-1792434990 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\src\pedido.cpp
+1792480174 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\src\pedido.cpp
 	"Pedido.h"
 
-1792477975 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\src\pizzeria.cpp
+1792480688 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1-dylam\src\pizzeria.cpp
 	"pizzeria.h"
 	<cstring>
 	<iomanip>
