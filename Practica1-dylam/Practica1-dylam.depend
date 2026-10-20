@@ -83,3 +83,13 @@
 	<iostream>
 	<cstring>
 
+1792482087 source:c:\users\alumno\documents\github\practica-estructura-de-datos\practica1-dylam\src\pizzeria.cpp
+	"pizzeria.h"
+	<cstring>
+	<iomanip>
+
+1792482087 c:\users\alumno\documents\github\practica-estructura-de-datos\practica1-dylam\include\pizzeria.h
+	"Pedido.h"
+	<iostream>
+	<cstring>
+
