@@ -113,3 +113,49 @@ contador++;
 
 
 }
+NodoPila::NodoPila(Pedido p,NodoPila* sig){
+    pedido=p;
+    siguiente=sig;
+}
+
+NodoPila::~NodoPila(){}
+
+Pila::Pila(){cima=NULL;}
+Pila::~Pila(){
+    while(cima){
+        desapilar();
+        capacidad--;
+    }
+}
+bool Pila::esVacia(){
+    return cima==NULL;
+}
+void Pila::apilar(Pedido p){
+    NodoPila *nuevo= new NodoPila(p,cima);
+    cima=nuevo;
+    capacidad++;
+}
+void Pila::desapilar(){
+    NodoPila *nodo;
+    if(cima){
+        nodo=cima;
+        cima=nodo->siguiente;
+        delete nodo;
+        capacidad --;
+    }
+}
+
+void Pila::mostrar(){
+    if(esVacia()){
+        cout<<"Pila Vacia\n";
+    }
+    else{
+        cout<<"Cima pila "<< cima->pedido.id_pedido<<endl;
+    }
+}
+int Pila::getCapacidad(){return capacidad;}
+void Pila::vaciar(){
+    while(!esVacia()){
+        desapilar();
+    }
+}

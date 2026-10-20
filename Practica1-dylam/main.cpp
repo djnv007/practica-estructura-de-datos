@@ -4,6 +4,7 @@
 #include<cctype>
 #include"pizzeria.h"
 #define N_PEDIDOS_PASO 10
+#define CAP_CAJA 6
 
 using namespace std;
 
@@ -15,6 +16,32 @@ Cola ExpedicionEste;
 Cola ExpedicionOeste;
 Cola PreparacionEspecial;
 
+//-----------------------------//
+Pila CajaNorte;
+Pila CajaSur;
+Pila CajaEste;
+Pila CajaOeste;
+//----------------------------//
+
+int CajasCompletasNorte=0;
+int CajasCompletasSur=0;
+int CajasCompletasEste=0;
+int CajasCompletasOeste=0;
+
+void meterEnCaja(Pila &Caja, Pedido p){
+    if(Caja.getCapacidad()<CAP_CAJA){
+        Caja.apilar(p);
+        if(Caja.getCapacidad()==CAP_CAJA-1){
+            CajasCompletasNorte++;
+        }
+    }
+    else{
+        Caja.vaciar();
+        Caja.apilar(p);
+
+    }
+}
+
 
 void avanzar_N_pedidos(int n)
 {
@@ -23,6 +50,7 @@ void avanzar_N_pedidos(int n)
     while(!ExpedicionNorte.esVacia()&&contador<n)
     {
         ExpedicionNorte.desencolar(p);
+        meterEnCaja(CajaNorte,p);
         contador++;
     }
     contador=0;

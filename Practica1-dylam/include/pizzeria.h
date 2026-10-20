@@ -31,5 +31,29 @@ public:
     void mostrar(const char* nombre);
 };
 Pedido generar_pedido();
+class NodoPila{
+private:
+        NodoPila *siguiente;
+        Pedido pedido;
+        friend class Pila;
+public:
+        NodoPila(Pedido pedido,NodoPila*sig=NULL);
+        ~NodoPila();
+};
+
+class Pila{
+private:
+    NodoPila *cima;
+    int capacidad;
+public:
+    Pila();
+    ~Pila();
+    bool esVacia();
+    void apilar(Pedido p);
+    void desapilar();
+    void mostrar();
+    int getCapacidad();
+    void vaciar();
+};
 
 #endif // PIZZERIA_H
