@@ -157,7 +157,6 @@ int main()
         case 2:
         {
             Recibidos.mostrar("RECIBIDOS");
-
             PreparacionEspecial.mostrar("PREPARACION ESPECIAL");
             Cocina.mostrar("COCINA");
             ExpedicionNorte.mostrar("EXPEDICION NORTE");

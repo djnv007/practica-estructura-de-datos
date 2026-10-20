@@ -120,12 +120,11 @@ NodoPila::NodoPila(Pedido p,NodoPila* sig){
 
 NodoPila::~NodoPila(){}
 
-Pila::Pila(){cima=NULL;}
-Pila::~Pila(){
-    while(cima){
-        desapilar();
-        capacidad--;
-    }
+Pila::Pila(){cima=NULL;
+    capacidad=0;}
+Pila::~Pila()
+{
+    vaciar();
 }
 bool Pila::esVacia(){
     return cima==NULL;
