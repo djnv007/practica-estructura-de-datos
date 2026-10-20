@@ -1,5 +1,6 @@
 #include "pizzeria.h"
 #include <cstring>
+#include <iomanip>
 
 NodoCola::NodoCola(Pedido p, NodoCola* sig){
     datos=p;
@@ -45,24 +46,43 @@ bool Cola::desencolar(Pedido &p){
     }
     return false;
 }
-void Cola::mostrar(){
-    if (esVacia()){
-        cout<<"Cola vacia\n";
+void Cola::mostrar()
+{
+    if(esVacia())
+    {
+        cout << "Cola vacia\n";
         return;
     }
-    NodoCola* aux= primero;
-    while(aux!=NULL){
-        Pedido p= aux->datos;
-        cout<<"\n ---------------------------------------\n";
-        cout<<"Pedido: "<<p.id_pedido<<endl;
-        cout<<"Cliente: "<<p.id_cliente<<endl;
-        cout<<"Pizza: "<<tipoToString(p.tipo_pizza)<<endl;
-        cout<<"Tamanio: "<<tamanoToString(p.tamano)<<endl;
-        cout<<"Zona: "<<zonaToString(p.zona_reparto)<<endl;
-        cout<<"Personalizado: "<<p.personalizada<<endl;
-        cout<<"Estado: "<<estadoToString(p.estado)<<endl;
-        cout << "\n ------------------------------------\n";
-        aux=aux->siguiente;
+
+    cout << left
+         << setw(10) << "Pedido"
+         << setw(10) << "Cliente"
+         << setw(18) << "Pizza"
+         << setw(12) << "Tamano"
+         << setw(10) << "Zona"
+         << setw(8)  << "Pers"
+         << setw(20) << "Estado"
+         << endl;
+
+    cout << string(88, '-') << endl;
+
+    NodoCola* aux = primero;
+
+    while(aux != NULL)
+    {
+        Pedido p = aux->datos;
+
+        cout << left
+             << setw(10) << p.id_pedido
+             << setw(10) << p.id_cliente
+             << setw(18) << tipoToString(p.tipo_pizza)
+             << setw(12) << tamanoToString(p.tamano)
+             << setw(10) << zonaToString(p.zona_reparto)
+             << setw(8)  << (p.personalizada ? "Si" : "No")
+             << setw(20) << estadoToString(p.estado)
+             << endl;
+
+        aux = aux->siguiente;
     }
 }
 Pedido generar_pedido(){
