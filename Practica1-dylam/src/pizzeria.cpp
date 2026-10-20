@@ -87,12 +87,11 @@ void Cola::mostrar()
 }
 Pedido generar_pedido(){
     Pedido p;
-    char id_aux[7]= "P01234";
-    for(int i=1;i<6;++i){
-        char cifra= '0'+rand()%10;
-        id_aux[i]=cifra;
-    }
-    strcpy(p.id_pedido, id_aux);
+    static int contador = 10000;
+
+sprintf(p.id_pedido, "P%05d", contador);
+
+contador++;
 
     int num=100+rand()%900;
     p.id_cliente=num;
