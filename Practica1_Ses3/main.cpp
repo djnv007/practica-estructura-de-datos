@@ -157,6 +157,7 @@ int main()
         cout<<"1\t\t"<<"Generar N pedidos"<<endl;
         cout<<"2\t\t"<<"Mostar pedidos recibidos"<<endl;
         cout<<"3\t\t"<<"Avanzar N pedidos un paso"<<endl;
+        cout<<"4\t\t"<<"Ver caja activa"<<endl;
         cout<<"0\t\t"<<"salir"<<endl;
         cin>>opcion;
         cin.ignore(1000,'\n');
@@ -231,6 +232,46 @@ int main()
             break;
 
         }
+        case 4:
+{
+    int zona;
+
+    cout << "Seleccione zona:\n";
+    cout << "1 - Norte\n";
+    cout << "2 - Sur\n";
+    cout << "3 - Este\n";
+    cout << "4 - Oeste\n";
+
+    cin >> zona;
+
+    switch(zona)
+    {
+        case 1:
+            cout << "\n=== CAJA ACTIVA: ZONA NORTE ===\n";
+            CajaNorte.mostrar();
+            break;
+
+        case 2:
+            cout << "\n=== CAJA ACTIVA: ZONA SUR ===\n";
+            CajaSur.mostrar();
+            break;
+
+        case 3:
+            cout << "\n=== CAJA ACTIVA: ZONA ESTE ===\n";
+            CajaEste.mostrar();
+            break;
+
+        case 4:
+            cout << "\n=== CAJA ACTIVA: ZONA OESTE ===\n";
+            CajaOeste.mostrar();
+            break;
+
+        default:
+            cout << "Zona no valida\n";
+    }
+
+    break;
+}
         case 0:
         {
             cout<<"cerrando\n";

@@ -144,13 +144,29 @@ void Pila::desapilar(){
     }
 }
 
-void Pila::mostrar(){
-    if(esVacia()){
-        cout<<"Pila Vacia\n";
+void Pila::mostrar()
+{
+    if(esVacia())
+{
+    cout << "(caja vacia)\n";
+    return;
+}
+
+    cout << "(cima)\n\n";
+
+    NodoPila* aux = cima;
+
+    while(aux != NULL)
+    {
+        cout << aux->pedido.id_pedido
+             << " - "
+             << tipoToString(aux->pedido.tipo_pizza)
+             << endl;
+
+        aux = aux->siguiente;
     }
-    else{
-        cout<<"Cima pila "<< cima->pedido.id_pedido<<endl;
-    }
+
+    cout << "\n(fondo)\n";
 }
 int Pila::getCapacidad(){return capacidad;}
 void Pila::vaciar(){
