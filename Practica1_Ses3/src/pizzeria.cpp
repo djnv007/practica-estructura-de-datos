@@ -129,6 +129,10 @@ Pila::~Pila()
 bool Pila::esVacia(){
     return cima==NULL;
 }
+Pedido Pila::cimaPila()
+{
+    return cima->pedido;
+}
 void Pila::apilar(Pedido p){
     NodoPila *nuevo= new NodoPila(p,cima);
     cima=nuevo;

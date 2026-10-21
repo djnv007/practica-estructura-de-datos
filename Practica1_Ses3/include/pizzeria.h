@@ -53,6 +53,7 @@ public:
     bool esVacia();
     void apilar(Pedido p);
     bool desapilar(Pedido &p);
+    Pedido cimaPila();
     void mostrar();
     int getCapacidad();
     void vaciar();
