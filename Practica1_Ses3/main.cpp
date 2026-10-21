@@ -48,29 +48,48 @@ void avanzar_N_pedidos(int n)
     Pedido p;
     int contador=0;
     while(!ExpedicionNorte.esVacia()&&contador<n)
-    {
-        ExpedicionNorte.desencolar(p);
-        meterEnCaja(CajaNorte,p);
-        contador++;
-    }
+{
+    ExpedicionNorte.desencolar(p);
+
+    p.estado = Caja;
+
+    meterEnCaja(CajaNorte,p);
+
+    contador++;
+}
     contador=0;
     while(!ExpedicionSur.esVacia()&&contador<n)
-    {
-        ExpedicionSur.desencolar(p);
-        contador++;
-    }
+{
+    ExpedicionSur.desencolar(p);
+
+    p.estado = Caja;
+
+    meterEnCaja(CajaSur,p);
+
+    contador++;
+}
     contador=0;
     while(!ExpedicionEste.esVacia()&&contador<n)
-    {
-        ExpedicionEste.desencolar(p);
-        contador++;
-    }
+{
+    ExpedicionEste.desencolar(p);
+
+    p.estado = Caja;
+
+    meterEnCaja(CajaEste,p);
+
+    contador++;
+}
     contador=0;
     while(!ExpedicionOeste.esVacia()&&contador<n)
-    {
-        ExpedicionOeste.desencolar(p);
-        contador++;
-    }
+{
+    ExpedicionOeste.desencolar(p);
+
+    p.estado = Caja;
+
+    meterEnCaja(CajaOeste,p);
+
+    contador++;
+}
     contador=0;
     while(!Cocina.esVacia()&&contador<n)
     {
