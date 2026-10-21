@@ -30,10 +30,10 @@ int CajasCompletasOeste=0;
 
 void meterEnCaja(Pila &Caja, Pedido p){
     if(Caja.getCapacidad()<CAP_CAJA){
-        if(Caja.getCapacidad()==CAP_CAJA-1){
+        Caja.apilar(p);
+        if(Caja.getCapacidad()==CAP_CAJA){
             CajasCompletasNorte++;
         }
-        Caja.apilar(p);
     }
     else{
         Caja.vaciar();
@@ -57,21 +57,18 @@ void avanzar_N_pedidos(int n)
     while(!ExpedicionSur.esVacia()&&contador<n)
     {
         ExpedicionSur.desencolar(p);
-        meterEnCaja(CajaSur,p);
         contador++;
     }
     contador=0;
     while(!ExpedicionEste.esVacia()&&contador<n)
     {
         ExpedicionEste.desencolar(p);
-        meterEnCaja(CajaEste,p);
         contador++;
     }
     contador=0;
     while(!ExpedicionOeste.esVacia()&&contador<n)
     {
         ExpedicionOeste.desencolar(p);
-        meterEnCaja(CajaOeste,p);
         contador++;
     }
     contador=0;
