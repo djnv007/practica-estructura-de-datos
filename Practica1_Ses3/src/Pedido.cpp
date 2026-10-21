@@ -89,6 +89,10 @@ char* estadoToString(Estado estado)
     {
         return "Expedicion";
     }
+    case Caja:
+    {
+        return "Caja";
+    }
     }
     return "";
 }

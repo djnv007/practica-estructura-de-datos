@@ -28,17 +28,22 @@ int CajasCompletasSur=0;
 int CajasCompletasEste=0;
 int CajasCompletasOeste=0;
 
-void meterEnCaja(Pila &Caja, Pedido p){
-    if(Caja.getCapacidad()<CAP_CAJA){
-        Caja.apilar(p);
-        if(Caja.getCapacidad()==CAP_CAJA){
-            CajasCompletasNorte++;
-        }
-    }
-    else{
-        Caja.vaciar();
+void meterEnCaja(Pila &Caja, Pedido p, int &contadorCajas)
+{
+    if(Caja.getCapacidad() < CAP_CAJA)
+    {
         Caja.apilar(p);
 
+        if(Caja.getCapacidad() == CAP_CAJA)
+        {
+            contadorCajas++;
+        }
+    }
+    else
+    {
+        Caja.vaciar();
+
+        Caja.apilar(p);
     }
 }
 
@@ -48,48 +53,45 @@ void avanzar_N_pedidos(int n)
     Pedido p;
     int contador=0;
     while(!ExpedicionNorte.esVacia()&&contador<n)
-{
-    ExpedicionNorte.desencolar(p);
+    {
+        ExpedicionNorte.desencolar(p);
 
-    p.estado = Caja;
+        p.estado = Caja;
 
-    meterEnCaja(CajaNorte,p);
-
-    contador++;
-}
+        meterEnCaja(CajaNorte,p,CajasCompletasNorte);
+        contador++;
+    }
     contador=0;
     while(!ExpedicionSur.esVacia()&&contador<n)
-{
-    ExpedicionSur.desencolar(p);
+    {
+        ExpedicionSur.desencolar(p);
 
-    p.estado = Caja;
+        p.estado = Caja;
 
-    meterEnCaja(CajaSur,p);
-
-    contador++;
-}
+        meterEnCaja(CajaSur,p,CajasCompletasSur);
+        contador++;
+    }
     contador=0;
     while(!ExpedicionEste.esVacia()&&contador<n)
-{
-    ExpedicionEste.desencolar(p);
+    {
+        ExpedicionEste.desencolar(p);
 
-    p.estado = Caja;
+        p.estado = Caja;
 
-    meterEnCaja(CajaEste,p);
+        meterEnCaja(CajaEste,p,CajasCompletasEste);
 
-    contador++;
-}
+        contador++;
+    }
     contador=0;
     while(!ExpedicionOeste.esVacia()&&contador<n)
-{
-    ExpedicionOeste.desencolar(p);
+    {
+        ExpedicionOeste.desencolar(p);
 
-    p.estado = Caja;
+        p.estado = Caja;
 
-    meterEnCaja(CajaOeste,p);
-
-    contador++;
-}
+        meterEnCaja(CajaOeste,p,CajasCompletasOeste);
+        contador++;
+    }
     contador=0;
     while(!Cocina.esVacia()&&contador<n)
     {
@@ -182,6 +184,35 @@ int main()
             ExpedicionSur.mostrar("EXPEDICION SUR");
             ExpedicionEste.mostrar("EXPEDICION ESTE");
             ExpedicionOeste.mostrar("EXPEDICION OESTE");
+            cout << "\n=========== CAJAS TERMICAS ===========" << endl;
+
+            cout << "Zona Norte -> activa: "
+                 << CajaNorte.getCapacidad()
+                 << "/" << CAP_CAJA
+                 << " enviadas: "
+                 << CajasCompletasNorte
+                 << endl;
+
+            cout << "Zona Sur -> activa: "
+                 << CajaSur.getCapacidad()
+                 << "/" << CAP_CAJA
+                 << " enviadas: "
+                 << CajasCompletasSur
+                 << endl;
+
+            cout << "Zona Este -> activa: "
+                 << CajaEste.getCapacidad()
+                 << "/" << CAP_CAJA
+                 << " enviadas: "
+                 << CajasCompletasEste
+                 << endl;
+
+            cout << "Zona Oeste -> activa: "
+                 << CajaOeste.getCapacidad()
+                 << "/" << CAP_CAJA
+                 << " enviadas: "
+                 << CajasCompletasOeste
+                 << endl;
             break;
         }
 
