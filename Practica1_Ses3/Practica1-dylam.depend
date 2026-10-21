@@ -93,3 +93,20 @@
 	<iostream>
 	<cstring>
 
+1792606207 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\src\pedido.cpp
+	"Pedido.h"
+
+1792605319 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\include\pedido.h
+	<iostream>
+	<cstring>
+
+1792607410 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\src\pizzeria.cpp
+	"pizzeria.h"
+	<cstring>
+	<iomanip>
+
+1792607359 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\include\pizzeria.h
+	"Pedido.h"
+	<iostream>
+	<cstring>
+

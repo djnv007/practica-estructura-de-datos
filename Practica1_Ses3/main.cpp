@@ -30,20 +30,13 @@ int CajasCompletasOeste=0;
 
 void meterEnCaja(Pila &Caja, Pedido p, int &contadorCajas)
 {
-    if(Caja.getCapacidad() < CAP_CAJA)
-    {
-        Caja.apilar(p);
+    Caja.apilar(p);
 
-        if(Caja.getCapacidad() == CAP_CAJA)
-        {
-            contadorCajas++;
-        }
-    }
-    else
+    if(Caja.getCapacidad() == CAP_CAJA)
     {
+        contadorCajas++;
+
         Caja.vaciar();
-
-        Caja.apilar(p);
     }
 }
 
@@ -143,6 +136,33 @@ void avanzar_N_pedidos(int n)
 
 
 }
+bool retirarPedido(Pila &caja, char id[])
+{
+    Pila auxiliar;
+
+    Pedido p;
+    bool encontrado = false;
+
+    while(caja.desapilar(p))
+    {
+        if(strcmp(p.id_pedido,id)==0)
+        {
+            encontrado = true;
+            break;
+        }
+
+        auxiliar.apilar(p);
+    }
+
+    while(auxiliar.desapilar(p))
+    {
+        caja.apilar(p);
+    }
+
+    return encontrado;
+}
+
+
 
 
 int main()
@@ -158,6 +178,7 @@ int main()
         cout<<"2\t\t"<<"Mostar pedidos recibidos"<<endl;
         cout<<"3\t\t"<<"Avanzar N pedidos un paso"<<endl;
         cout<<"4\t\t"<<"Ver caja activa"<<endl;
+        cout<<"5\t\t"<<"Retirar pedido de una caja"<<endl;
         cout<<"0\t\t"<<"salir"<<endl;
         cin>>opcion;
         cin.ignore(1000,'\n');
@@ -214,6 +235,15 @@ int main()
                  << " enviadas: "
                  << CajasCompletasOeste
                  << endl;
+                 int totalCajas =
+    CajasCompletasNorte +
+    CajasCompletasSur +
+    CajasCompletasEste +
+    CajasCompletasOeste;
+
+cout << "\nTotal de cajas enviadas: "
+     << totalCajas
+     << endl;
             break;
         }
 
@@ -233,45 +263,98 @@ int main()
 
         }
         case 4:
-{
-    int zona;
+        {
+            int zona;
 
-    cout << "Seleccione zona:\n";
-    cout << "1 - Norte\n";
-    cout << "2 - Sur\n";
-    cout << "3 - Este\n";
-    cout << "4 - Oeste\n";
+            cout << "Seleccione zona:\n";
+            cout << "1 - Norte\n";
+            cout << "2 - Sur\n";
+            cout << "3 - Este\n";
+            cout << "4 - Oeste\n";
 
-    cin >> zona;
+            cin >> zona;
 
-    switch(zona)
-    {
-        case 1:
-            cout << "\n=== CAJA ACTIVA: ZONA NORTE ===\n";
-            CajaNorte.mostrar();
+            switch(zona)
+            {
+            case 1:
+                cout << "\n=== CAJA ACTIVA: ZONA NORTE ===\n";
+                CajaNorte.mostrar();
+                break;
+
+            case 2:
+                cout << "\n=== CAJA ACTIVA: ZONA SUR ===\n";
+                CajaSur.mostrar();
+                break;
+
+            case 3:
+                cout << "\n=== CAJA ACTIVA: ZONA ESTE ===\n";
+                CajaEste.mostrar();
+                break;
+
+            case 4:
+                cout << "\n=== CAJA ACTIVA: ZONA OESTE ===\n";
+                CajaOeste.mostrar();
+                break;
+
+            default:
+                cout << "Zona no valida\n";
+            }
+
             break;
 
-        case 2:
-            cout << "\n=== CAJA ACTIVA: ZONA SUR ===\n";
-            CajaSur.mostrar();
+        }
+        case 5:
+        {
+            int zona;
+            char id[7];
+
+            cout << "Seleccione zona:\n";
+            cout << "1 - Norte\n";
+            cout << "2 - Sur\n";
+            cout << "3 - Este\n";
+            cout << "4 - Oeste\n";
+
+            cin >> zona;
+
+            cout << "Introduzca el ID del pedido: ";
+            cin >> id;
+
+            bool eliminado = false;
+
+            switch(zona)
+            {
+            case 1:
+                eliminado = retirarPedido(CajaNorte,id);
+                break;
+
+            case 2:
+                eliminado = retirarPedido(CajaSur,id);
+                break;
+
+            case 3:
+                eliminado = retirarPedido(CajaEste,id);
+                break;
+
+            case 4:
+                eliminado = retirarPedido(CajaOeste,id);
+                break;
+
+            default:
+                cout << "Zona no valida\n";
+                break;
+            }
+
+            if(eliminado)
+            {
+                cout << "Pedido retirado correctamente.\n";
+            }
+            else
+            {
+                cout << "Pedido no encontrado.\n";
+            }
+
             break;
-
-        case 3:
-            cout << "\n=== CAJA ACTIVA: ZONA ESTE ===\n";
-            CajaEste.mostrar();
-            break;
-
-        case 4:
-            cout << "\n=== CAJA ACTIVA: ZONA OESTE ===\n";
-            CajaOeste.mostrar();
-            break;
-
-        default:
-            cout << "Zona no valida\n";
-    }
-
-    break;
-}
+        }
         case 0:
         {
             cout<<"cerrando\n";
