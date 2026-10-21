@@ -31,17 +31,19 @@ public:
     void mostrar(const char* nombre);
 };
 Pedido generar_pedido();
-class NodoPila{
+class NodoPila
+{
 private:
-        NodoPila *siguiente;
-        Pedido pedido;
-        friend class Pila;
+    NodoPila *siguiente;
+    Pedido pedido;
+    friend class Pila;
 public:
-        NodoPila(Pedido pedido,NodoPila*sig=NULL);
-        ~NodoPila();
+    NodoPila(Pedido pedido,NodoPila*sig=NULL);
+    ~NodoPila();
 };
 
-class Pila{
+class Pila
+{
 private:
     NodoPila *cima;
     int capacidad;
@@ -50,7 +52,7 @@ public:
     ~Pila();
     bool esVacia();
     void apilar(Pedido p);
-    void desapilar();
+    bool desapilar(Pedido &p);
     void mostrar();
     int getCapacidad();
     void vaciar();

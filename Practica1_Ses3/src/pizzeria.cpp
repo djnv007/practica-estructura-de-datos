@@ -134,14 +134,24 @@ void Pila::apilar(Pedido p){
     cima=nuevo;
     capacidad++;
 }
-void Pila::desapilar(){
-    NodoPila *nodo;
-    if(cima){
-        nodo=cima;
-        cima=nodo->siguiente;
+bool Pila::desapilar(Pedido &p)
+{
+    if(!esVacia())
+    {
+        p = cima->pedido;
+
+        NodoPila *nodo = cima;
+
+        cima = cima->siguiente;
+
         delete nodo;
-        capacidad --;
+
+        capacidad--;
+
+        return true;
     }
+
+    return false;
 }
 
 void Pila::mostrar()
@@ -169,8 +179,12 @@ void Pila::mostrar()
     cout << "\n(fondo)\n";
 }
 int Pila::getCapacidad(){return capacidad;}
-void Pila::vaciar(){
-    while(!esVacia()){
-        desapilar();
+void Pila::vaciar()
+{
+    Pedido p;
+
+    while(desapilar(p))
+    {
+
     }
 }
