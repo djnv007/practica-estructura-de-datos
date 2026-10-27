@@ -15,6 +15,7 @@ Cola ExpedicionSur;
 Cola ExpedicionEste;
 Cola ExpedicionOeste;
 Cola PreparacionEspecial;
+Cola Finalizados;
 
 //-----------------------------//
 Pila CajaNorte;
