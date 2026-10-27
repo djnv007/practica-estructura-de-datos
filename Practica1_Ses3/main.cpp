@@ -162,7 +162,12 @@ bool retirarPedido(Pila &caja, char id[])
     {
         if(strcmp(p.id_pedido,id)==0)
         {
+            p.estado = Retirado;
+
+            Finalizados.encolar(p);
+
             encontrado = true;
+
             break;
         }
 
@@ -250,15 +255,15 @@ int main()
                  << " enviadas: "
                  << CajasCompletasOeste
                  << endl;
-                 int totalCajas =
-    CajasCompletasNorte +
-    CajasCompletasSur +
-    CajasCompletasEste +
-    CajasCompletasOeste;
+            int totalCajas =
+                CajasCompletasNorte +
+                CajasCompletasSur +
+                CajasCompletasEste +
+                CajasCompletasOeste;
 
-cout << "\nTotal de cajas enviadas: "
-     << totalCajas
-     << endl;
+            cout << "\nTotal de cajas enviadas: "
+                 << totalCajas
+                 << endl;
             break;
         }
 
