@@ -93,10 +93,10 @@
 	<iostream>
 	<cstring>
 
-1792606207 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\src\pedido.cpp
+1793087538 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\src\pedido.cpp
 	"Pedido.h"
 
-1792605319 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\include\pedido.h
+1793087541 c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\include\pedido.h
 	<iostream>
 	<cstring>
 
@@ -110,7 +110,7 @@
 	<iostream>
 	<cstring>
 
-1792608200 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\main.cpp
+1793088156 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\main.cpp
 	<iostream>
 	<ctime>
 	<cstdlib>

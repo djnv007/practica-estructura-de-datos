@@ -199,6 +199,7 @@ int main()
         cout<<"3\t\t"<<"Avanzar N pedidos un paso"<<endl;
         cout<<"4\t\t"<<"Ver caja activa"<<endl;
         cout<<"5\t\t"<<"Retirar pedido de una caja"<<endl;
+        cout<<"6\t\t"<<"Mostrar pedidos finalizados"<<endl;
         cout<<"0\t\t"<<"salir"<<endl;
         cin>>opcion;
         cin.ignore(1000,'\n');
@@ -375,6 +376,13 @@ int main()
 
             break;
         }
+        case 6:
+        {
+            Finalizados.mostrar("FINALIZADOS");
+            break;
+        }
+
+
         case 0:
         {
             cout<<"cerrando\n";
