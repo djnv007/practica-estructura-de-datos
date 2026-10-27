@@ -51,7 +51,7 @@ void meterEnCaja(Pila &Caja, Pedido p, int &contadorCajas)
     {
         contadorCajas++;
 
-        Caja.vaciar();
+        enviarCaja(Caja);
     }
 }
 
