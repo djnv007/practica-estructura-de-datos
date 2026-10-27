@@ -110,3 +110,10 @@
 	<iostream>
 	<cstring>
 
+1792608200 source:c:\users\noahf\desktop\uni\segundo_curso\primer_cuatri\estructuras_de_datos\lab\practica-estructura-de-datos\practica1_ses3\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<cctype>
+	"pizzeria.h"
+

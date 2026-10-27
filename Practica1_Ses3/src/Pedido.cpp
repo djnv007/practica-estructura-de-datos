@@ -93,6 +93,15 @@ char* estadoToString(Estado estado)
     {
         return "Caja";
     }
+    case Enviado:
+    {
+        return "Enviado";
+    }
+
+    case Retirado:
+    {
+        return "Retirado";
+    }
     }
     return "";
 }

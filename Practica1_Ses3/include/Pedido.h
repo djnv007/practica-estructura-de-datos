@@ -9,7 +9,7 @@ const int LON_ID=7;
 enum Tipo_pizza {Margarita,Barbacoa,Vegetal,Hawaiana,Romana,Cuatro_quesos};
 enum Tamano {Mediano,Grande};
 enum Zona_reparto {Norte,Sur,Este,Oeste};
-enum Estado {Recibido, Preparacion_especial, cocina, Expedicion, Caja};
+enum Estado {Recibido, Preparacion_especial, cocina, Expedicion, Caja, Enviado, Retirado};
 struct Pedido
 {
     char id_pedido[LON_ID];
