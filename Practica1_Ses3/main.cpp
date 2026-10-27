@@ -29,6 +29,20 @@ int CajasCompletasSur=0;
 int CajasCompletasEste=0;
 int CajasCompletasOeste=0;
 
+
+
+void enviarCaja(Pila &Caja)
+{
+    Pedido p;
+
+    while(Caja.desapilar(p))
+    {
+        p.estado = Enviado;
+
+        Finalizados.encolar(p);
+    }
+}
+
 void meterEnCaja(Pila &Caja, Pedido p, int &contadorCajas)
 {
     Caja.apilar(p);
