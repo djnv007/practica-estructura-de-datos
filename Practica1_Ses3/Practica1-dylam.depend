@@ -117,3 +117,27 @@
 	<cctype>
 	"pizzeria.h"
 
+1793110986 source:d:\estructuras-de-datos\practica-estructura-de-datos\practica1_ses3\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<cctype>
+	"pizzeria.h"
+
+1793108822 d:\estructuras-de-datos\practica-estructura-de-datos\practica1_ses3\include\pizzeria.h
+	"Pedido.h"
+	<iostream>
+	<cstring>
+
+1793108822 d:\estructuras-de-datos\practica-estructura-de-datos\practica1_ses3\include\pedido.h
+	<iostream>
+	<cstring>
+
+1793108822 source:d:\estructuras-de-datos\practica-estructura-de-datos\practica1_ses3\src\pedido.cpp
+	"Pedido.h"
+
+1793108822 source:d:\estructuras-de-datos\practica-estructura-de-datos\practica1_ses3\src\pizzeria.cpp
+	"pizzeria.h"
+	<cstring>
+	<iomanip>
+
